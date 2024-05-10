@@ -7,10 +7,10 @@ class PodcastScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lista de Tareas'),
+        title: const Text('Podcast'),
       ),
       body: const Center(
-        child: Text('Pantalla para las tareas'),
+        child: Text('Pantalla para el podcast'),
       ),
     );
   }
