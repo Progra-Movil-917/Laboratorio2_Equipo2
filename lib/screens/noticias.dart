@@ -1,66 +1,98 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class NoticiasScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Noticias Importantes'),
+        title: Text('Noticias'),
       ),
       body: ListView(
         padding: EdgeInsets.all(16.0),
-        children: <Widget>[
-          
-          _buildNoticiaCard(
-            titulo: "Evento de Reunión de Exalumnos",
-            descripcion: "El próximo sábado se llevará a cabo un evento de reunión para todos los exalumnos de la universidad. ¡No te lo pierdas!",
-            
-  
-            ),
+        children: [
+          NoticiaCard(
+            titulo: 'Marathón vs Génesis EN VIVO: Semifinal de vuelta en el Yankel',
+            fecha: '11 de Mayo, 2024',
+            contenido:
+                '¡Te invitamos a nuestros próximos partido la Final de la Betcris!',
+            imagenUrl: 
+            'https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/CD_Marathon.svg/1200px-CD_Marathon.svg.png',
           ),
-          SizedBox(height: 16.0,
-                    Widget:16,
-                    child: Image.network('https://images.wallpapersden.com/image/download/kame-house-dragon-ball-z_a2llbmaUmZqaraWkpJRmaGtrrWxrbQ.jpg')
-                    ),
-          _buildNoticiaCard(
-            titulo: "Cambio en el Horario de Clases",
-            descripcion: "A partir de la próxima semana, el horario de clases se modificará ligeramente para mejorar la distribución de las asignaturas.",
+          NoticiaCard(
+            titulo: 'Matrícula abierta',
+            fecha: '26 de Junio, 2024',
+            contenido:
+                'Se le informa a toda la comunidad CEUTEC y demás que la matrícula para el próximo periodo académico se encuentra disponible.',
+            imagenUrl: 'https://cdn-icons-png.flaticon.com/512/4078/4078099.png',
           ),
           SizedBox(height: 16.0),
-          _buildNoticiaCard(
-            titulo: "Convocatoria para Becas Estudiantiles",
-            descripcion: "Se abre la convocatoria para solicitar becas estudiantiles. Los estudiantes interesados pueden encontrar más información en el sitio web de la universidad.",
+          NoticiaCard(
+            titulo: 'Real Madrid arrasa al Granada',
+            fecha: '11 de Mayo, 2024',
+            contenido:
+                'Los goles fueron anotados por Brahim Díaz, Fran García y Arda Guler, destacando el rendimiento de los menos habituales en el once inicial del Real Madrid.',
+            imagenUrl: 'https://www.elheraldo.hn/binrepository/1200x900/0c0/0d0/none/45933/VXNK/real-madrid-granada_7469439_20240511131445.jpg',
           ),
         ],
       ),
     );
   }
+}
 
-  Widget _buildNoticiaCard({required String titulo, required String descripcion}) {
+class NoticiaCard extends StatelessWidget {
+  final String titulo;
+  final String fecha;
+  final String contenido;
+  final String imagenUrl;
+
+  const NoticiaCard({
+    required this.titulo,
+    required this.fecha,
+    required this.contenido,
+    required this.imagenUrl,
+  });
+
+  @override
+  Widget build(BuildContext context) {
     return Card(
-      elevation: 4.0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
-      ),
+      elevation: 3.0,
       child: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              titulo,
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
+        padding: const EdgeInsets.all(16.0),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    titulo,
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 8.0),
+                  Text(
+                    fecha,
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  SizedBox(height: 16.0),
+                  Text(
+                    contenido,
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                ],
               ),
             ),
-            SizedBox(height: 8.0),
-            Text(
-              descripcion,
-              style: TextStyle(
-                fontSize: 16.0,
-              ),
+            SizedBox(width: 16.0),
+            Image.network(
+              imagenUrl,
+              width: 80.0,
+              height: 80.0,
+              fit: BoxFit.cover,
             ),
           ],
         ),
