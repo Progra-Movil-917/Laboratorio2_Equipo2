@@ -8,14 +8,27 @@ class MonedaScreen extends StatefulWidget {
 }
 
 class _MonedaScreenState extends State<MonedaScreen> {
+  String _selmoneda = 'dolar';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cambio de Moneda'),
       ),
-      body: const Center(
-        child: Text('Pantalla para el cambio de moneda'),
+      body: Padding (
+        padding: const EdgeInsets.all(16.0),
+       child: Column (
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text ( 
+        'SeleccionarMoneda',
+        style: TextStyle ( 
+          fontSize: 18.0,
+          fontWeight: FontWeight.bold,
+        ),
+          ),
+        ],
+       ),
       ),
     );
   }
