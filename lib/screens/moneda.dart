@@ -101,10 +101,27 @@ class _MonedaScreenState extends State<MonedaScreen> {
   //Metodo para presentar el valor de venta de cada moneda
   String _ValorVenta() {
     if (_selmoneda == 'Dolar') {
-      return '24.8203';
+      return '24.73';
     } else if (_selmoneda == 'Euro') {
-      return '29.7719';
+      return '26.64';
     }
     return '';
+  }
+
+  //Metodo para hacer la convercion de las monedas
+  void _conversion() {
+    double cant = double.tryParse(_controller.text) ?? 0.0;
+    double tasa;
+
+    if (_selmoneda == 'Dolar') {
+      tasa = cant * double.parse(_ValorVenta());
+    } else if (_selmoneda == 'Euro') {
+      tasa = cant * double.parse(_ValorVenta());
+    } else {
+      tasa = 0.0;
+    }
+    setState(() {
+      _result = tasa.toStringAsFixed(2);
+    });
   }
 }
