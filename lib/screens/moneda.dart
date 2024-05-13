@@ -58,4 +58,29 @@ class _MonedaScreenState extends State<MonedaScreen> {
       _result = ''; 
     });
   }
+  Widget _buildPrecio(String tipo, String valor)
+  {
+    return Column ( 
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text ( 
+          '$tipo:',
+          style: TextStyle(
+            fontSize: 18.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(height: 8.0),
+        Text ( 
+          'L.$valor',
+          style: TextStyle(
+            fontSize: 16.0,
+            color: Colors.blue,
+            decoration: TextDecoration.underline,
+          ),
+        ),
+        SizedBox(height: 16.0),
+      ],
+    );
+  }
 }
