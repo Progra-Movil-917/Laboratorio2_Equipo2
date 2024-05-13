@@ -9,6 +9,8 @@ class MonedaScreen extends StatefulWidget {
 
 class _MonedaScreenState extends State<MonedaScreen> {
   String _selmoneda = 'dolar';
+  TextEditingController _controller = TextEditingController ();
+  String _result = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,9 +29,33 @@ class _MonedaScreenState extends State<MonedaScreen> {
           fontWeight: FontWeight.bold,
         ),
           ),
+          SizedBox(height: 16.0,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton( 
+                onPressed: () {_camMoneda('Dolar');
+                },
+                child: Text('Dolar'),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    _camMoneda('Euro');
+                  },
+                  child: Text('Euro'),
+              ),
+            ],
+          )
         ],
        ),
       ),
     );
+  }
+  void _camMoneda(String newMoneda) {
+    setState(() {
+      _selmoneda = newMoneda;
+      _controller.clear(); 
+      _result = ''; 
+    });
   }
 }
