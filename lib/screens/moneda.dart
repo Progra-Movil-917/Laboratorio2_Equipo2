@@ -9,6 +9,7 @@ class MonedaScreen extends StatefulWidget {
 
 class _MonedaScreenState extends State<MonedaScreen> {
   String _selmoneda = 'dolar';
+  String _nomMoneda = 'Dolar';
   TextEditingController _controller = TextEditingController();
   String _result = '';
   @override
@@ -17,37 +18,63 @@ class _MonedaScreenState extends State<MonedaScreen> {
       appBar: AppBar(
         title: const Text('Cambio de Moneda'),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'SeleccionarMoneda',
-              style: TextStyle(
+            Text(
+              'Moneda Seleccionada: $_nomMoneda',
+              style: const TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(
-              height: 16.0,
+              height: 35,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    _camMoneda('Dolar');
+                    _camMoneda('Dolar', 'Dolar');
                   },
                   child: const Text('Dolar'),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    _camMoneda('Euro');
+                    _camMoneda('Euro', 'Euro');
                   },
                   child: const Text('Euro'),
                 ),
               ],
+            ),
+            SizedBox(height: 35),
+            _buildPrecio('Compra', _ValorCompra()),
+            _buildPrecio('Venta', _ValorVenta()),
+            SizedBox(height: 16.0),
+            TextField(
+              controller: _controller,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(
+                labelText: 'Ingrese la cantidad a convertir',
+              ),
+            ),
+            SizedBox(height: 35),
+            ElevatedButton(
+              onPressed: () {
+                _conversion();
+              },
+              child: const Text('Convertir'),
+            ),
+            const SizedBox(height: 16.0),
+            Text(
+              'Lempiras: $_result',
+              style: const TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+              ),
             )
           ],
         ),
@@ -55,9 +82,11 @@ class _MonedaScreenState extends State<MonedaScreen> {
     );
   }
 
-  void _camMoneda(String newMoneda) {
+  //Metodo para hacer los cambios de moneda
+  void _camMoneda(String newMoneda, String nameMoneda) {
     setState(() {
       _selmoneda = newMoneda;
+      _nomMoneda = nameMoneda;
       _controller.clear();
       _result = '';
     });
@@ -91,9 +120,9 @@ class _MonedaScreenState extends State<MonedaScreen> {
   //Metodo para presentar el valor de compra de cada moneda
   String _ValorCompra() {
     if (_selmoneda == 'Dolar') {
-      return '24.6968';
+      return '24.69';
     } else if (_selmoneda == 'Euro') {
-      return '25.2772';
+      return '25.27';
     }
     return '';
   }
