@@ -9,21 +9,23 @@ class NoticiasScreen extends StatelessWidget {
       ),
       body: ListView(
         padding: EdgeInsets.all(16.0),
-        children: [
+        children: const [
           NoticiaCard(
-            titulo: 'Marathón vs Génesis EN VIVO: Semifinal de vuelta en el Yankel',
+            titulo:
+                'Marathón vs Génesis EN VIVO: Semifinal de vuelta en el Yankel',
             fecha: '11 de Mayo, 2024',
             contenido:
                 '¡Te invitamos a nuestros próximos partido la Final de la Betcris!',
-            imagenUrl: 
-            'https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/CD_Marathon.svg/1200px-CD_Marathon.svg.png',
+            imagenUrl:
+                'https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/CD_Marathon.svg/1200px-CD_Marathon.svg.png',
           ),
           NoticiaCard(
             titulo: 'Matrícula abierta',
             fecha: '26 de Junio, 2024',
             contenido:
                 'Se le informa a toda la comunidad CEUTEC y demás que la matrícula para el próximo periodo académico se encuentra disponible.',
-            imagenUrl: 'https://cdn-icons-png.flaticon.com/512/4078/4078099.png',
+            imagenUrl:
+                'https://cdn-icons-png.flaticon.com/512/4078/4078099.png',
           ),
           SizedBox(height: 16.0),
           NoticiaCard(
@@ -31,7 +33,8 @@ class NoticiasScreen extends StatelessWidget {
             fecha: '11 de Mayo, 2024',
             contenido:
                 'Los goles fueron anotados por Brahim Díaz, Fran García y Arda Guler, destacando el rendimiento de los menos habituales en el once inicial del Real Madrid.',
-            imagenUrl: 'https://www.elheraldo.hn/binrepository/1200x900/0c0/0d0/none/45933/VXNK/real-madrid-granada_7469439_20240511131445.jpg',
+            imagenUrl:
+                'https://www.elheraldo.hn/binrepository/1200x900/0c0/0d0/none/45933/VXNK/real-madrid-granada_7469439_20240511131445.jpg',
           ),
         ],
       ),

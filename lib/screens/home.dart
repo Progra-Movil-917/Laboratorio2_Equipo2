@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
           ),
           ListTile(
             leading: Icon(Icons.currency_exchange),
-            title: Text('El cambio de Monedas'),
+            title: Text('Cambio de Monedas'),
             onTap: () {
               Navigator.pushNamed(context, '/monedas');
             },

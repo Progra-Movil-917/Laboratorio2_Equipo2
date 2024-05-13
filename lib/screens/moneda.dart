@@ -12,7 +12,7 @@ class _MonedaScreenState extends State<MonedaScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Monedas'),
+        title: const Text('Cambio de Moneda'),
       ),
       body: const Center(
         child: Text('Pantalla para el cambio de moneda'),
