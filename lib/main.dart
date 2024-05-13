@@ -21,11 +21,11 @@ class MainApp extends StatelessWidget {
       ),
       initialRoute: '/home',
       routes: {
-        '/home': (context) => HomeScreen(),
-        '/noticias': (context) => NoticiasScreen(),
-        '/monedas': (context) => MonedaScreen(),
-        '/tareas': (context) => TareasScreen(),
-        '/podcast': (context) => PodcastScreen(),
+        '/home': (context) => const HomeScreen(),
+        '/noticias': (context) => const NoticiasScreen(),
+        '/monedas': (context) => const MonedaScreen(),
+        '/tareas': (context) => const TareasScreen(),
+        '/podcast': (context) => const PodcastScreen(),
       },
     );
   }

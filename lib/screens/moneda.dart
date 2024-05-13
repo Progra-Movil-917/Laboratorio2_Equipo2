@@ -10,7 +10,7 @@ class MonedaScreen extends StatefulWidget {
 class _MonedaScreenState extends State<MonedaScreen> {
   String _selmoneda = 'dolar';
   String _nomMoneda = 'Dolar';
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   String _result = '';
   @override
   Widget build(BuildContext context) {
@@ -50,10 +50,10 @@ class _MonedaScreenState extends State<MonedaScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 35),
+            const SizedBox(height: 35),
             _buildPrecio('Compra', _ValorCompra()),
             _buildPrecio('Venta', _ValorVenta()),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             TextField(
               controller: _controller,
               keyboardType: TextInputType.number,
@@ -61,7 +61,7 @@ class _MonedaScreenState extends State<MonedaScreen> {
                 labelText: 'Ingrese la cantidad a convertir',
               ),
             ),
-            SizedBox(height: 35),
+            const SizedBox(height: 35),
             ElevatedButton(
               onPressed: () {
                 _conversion();

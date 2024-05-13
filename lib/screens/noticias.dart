@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class NoticiasScreen extends StatelessWidget {
+  const NoticiasScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Noticias'),
+        title: const Text('Noticias'),
       ),
       body: ListView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         children: const [
           NoticiaCard(
             titulo:
@@ -48,7 +50,7 @@ class NoticiaCard extends StatelessWidget {
   final String contenido;
   final String imagenUrl;
 
-  const NoticiaCard({
+  const NoticiaCard({super.key, 
     required this.titulo,
     required this.fecha,
     required this.contenido,
@@ -69,28 +71,28 @@ class NoticiaCard extends StatelessWidget {
                 children: [
                   Text(
                     titulo,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   Text(
                     fecha,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14.0,
                       color: Colors.grey,
                     ),
                   ),
-                  SizedBox(height: 16.0),
+                  const SizedBox(height: 16.0),
                   Text(
                     contenido,
-                    style: TextStyle(fontSize: 16.0),
+                    style: const TextStyle(fontSize: 16.0),
                   ),
                 ],
               ),
             ),
-            SizedBox(width: 16.0),
+            const SizedBox(width: 16.0),
             Image.network(
               imagenUrl,
               width: 80.0,

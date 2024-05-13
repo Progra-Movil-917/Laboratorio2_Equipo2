@@ -17,29 +17,29 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            leading: Icon(Icons.newspaper),
-            title: Text('Noticias'),
+            leading: const Icon(Icons.newspaper),
+            title: const Text('Noticias'),
             onTap: () {
               Navigator.pushNamed(context, '/noticias');
             },
           ),
           ListTile(
-            leading: Icon(Icons.currency_exchange),
-            title: Text('Cambio de Monedas'),
+            leading: const Icon(Icons.currency_exchange),
+            title: const Text('Cambio de Monedas'),
             onTap: () {
               Navigator.pushNamed(context, '/monedas');
             },
           ),
           ListTile(
-            leading: Icon(Icons.list),
-            title: Text('Lista de tareas'),
+            leading: const Icon(Icons.list),
+            title: const Text('Lista de tareas'),
             onTap: () {
               Navigator.pushNamed(context, '/tareas');
             },
           ),
           ListTile(
-            leading: Icon(Icons.podcasts),
-            title: Text('Podcast'),
+            leading: const Icon(Icons.podcasts),
+            title: const Text('Podcast'),
             onTap: () {
               Navigator.pushNamed(context, '/podcast');
             },

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PodcastScreen extends StatelessWidget {
-  const PodcastScreen({Key? key}) : super(key: key);
+  const PodcastScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
