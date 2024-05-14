@@ -10,10 +10,14 @@ class PodcastScreen extends StatelessWidget {
       context,
       designSize: const Size(375, 812),
     );
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Podcast'),
+        title: const Text(
+          'Podcast',
+          style: TextStyle(
+              color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.green,
       ),
       body: SingleChildScrollView(
         child: Padding(

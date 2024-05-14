@@ -7,7 +7,12 @@ class NoticiasScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Noticias'),
+        title: const Text(
+          'Noticias',
+          style: TextStyle(
+              color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.green,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
@@ -50,7 +55,8 @@ class NoticiaCard extends StatelessWidget {
   final String contenido;
   final String imagenUrl;
 
-  const NoticiaCard({super.key, 
+  const NoticiaCard({
+    super.key,
     required this.titulo,
     required this.fecha,
     required this.contenido,

@@ -16,7 +16,12 @@ class _MonedaScreenState extends State<MonedaScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cambio de Moneda'),
+        title: const Text(
+          'Cambio de Moneda',
+          style: TextStyle(
+              color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.green,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
